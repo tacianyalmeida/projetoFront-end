@@ -28,10 +28,10 @@ const App = () => {
             <Header />
             <Routes>
                 <Route path="/" element={<Login onLoginSuccess={() => setAutenticado(true)} />} />
-                <Route path="/home"element={<PrivateRoute><Home /></PrivateRoute>}/>
-                <Route path="/controleLimpeza"element={<PrivateRoute><ControleLimpeza saveDados={salvaDados} /></PrivateRoute> }/>
-                <Route path="/planilha"element={<PrivateRoute><Planilha list={list} /> </PrivateRoute>}/>
-                <Route path="/contato" element={<PrivateRoute><Contato /></PrivateRoute>}/>
+                <Route path="/home" element={<PrivateRoute verifica={<Home />} />} />                
+                <Route path="/controleLimpeza" element={<PrivateRoute verifica={<ControleLimpeza saveDados={salvaDados} />} />} />
+                <Route path="/planilha" element={<PrivateRoute verifica={<Planilha list={list} />} />} />
+                <Route path="/contato" element={<PrivateRoute verifica={<Contato />}/>}/>
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
             <Footer />
